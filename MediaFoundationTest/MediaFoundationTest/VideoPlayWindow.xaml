@@ -1,0 +1,14 @@
+﻿<Window x:Class="MediaFoundationTest.VideoPlayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Interop="clr-namespace:System.Windows.Interop;assembly=PresentationCore"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VideoPlayWindow" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <Image>
+            <Image.Source>
+                <Interop:D3DImage x:Name="MyD3DImage" IsFrontBufferAvailableChanged="MyD3DImage_IsFrontBufferAvailableChanged"></Interop:D3DImage>
+            </Image.Source>
+        </Image>
+        
+    </Grid>
+</Window>

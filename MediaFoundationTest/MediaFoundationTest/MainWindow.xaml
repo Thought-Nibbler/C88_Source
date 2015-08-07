@@ -1,0 +1,101 @@
+﻿<Window x:Class="MediaFoundationTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Media Foundation Test" Height="120" Width="500" Background="Gray" 
+        Loaded="MainWindow_Load" Closed="MainWindow_Closed">
+    <Grid>
+        <TabControl Grid.Row="1">
+            <TabItem Header="動画再生">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        Grid.Row="0" Grid.Column="0"
+                        Margin="5"
+                        Content="再生"
+                        IsEnabled="{Binding IsVideoPlayButtonEnable}"
+                        Click="BtnVideoPlay_Click"
+                        />
+                    <Button
+                        Grid.Row="0" Grid.Column="1"
+                        Margin="5"
+                        Content="一時停止"
+                        IsEnabled="{Binding IsVideoPauseButtonEnable}"
+                        Click="BtnVideoPause_Click"
+                        />
+                    <Button
+                        Grid.Row="0" Grid.Column="2"
+                        Margin="5"
+                        Content="停止"
+                        IsEnabled="{Binding IsVideoStopButtonEnable}"
+                        Click="BtnVideoStop_Click"
+                        />
+                </Grid>
+            </TabItem>
+            <TabItem Header="音声再生">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        Grid.Row="0" Grid.Column="0"
+                        Margin="5"
+                        Content="再生"
+                        IsEnabled="{Binding IsAudioPlayButtonEnable}"
+                        Click="BtnAudioPlay_Click"
+                        />
+                    <Button
+                        Grid.Row="0" Grid.Column="1"
+                        Margin="5"
+                        Content="一時停止"
+                        IsEnabled="{Binding IsAudioPauseButtonEnable}"
+                        Click="BtnAudioPause_Click"
+                        />
+                    <Button
+                        Grid.Row="0" Grid.Column="2"
+                        Margin="5"
+                        Content="停止"
+                        IsEnabled="{Binding IsAudioStopButtonEnable}"
+                        Click="BtnAudioStop_Click"
+                        />
+                </Grid>
+            </TabItem>
+            <TabItem Header="カメラキャプチャ">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        Grid.Column="0"
+                        Margin="5"
+                        IsEnabled="{Binding IsCaptureStartButtonEnabled}"
+                        Click="BtnCaptureStart_Click"
+                        Content="キャプチャ開始" 
+                        />
+                    <Button
+                        Grid.Column="1"
+                        Margin="5"
+                        IsEnabled="{Binding IsCaptureEndButtonEnabled}"
+                        Click="BtnCaptureEnd_Click"
+                        Content="キャプチャ終了" 
+                        />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
